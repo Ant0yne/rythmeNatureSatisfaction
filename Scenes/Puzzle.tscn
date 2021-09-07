@@ -25,10 +25,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 33.685, 33.7256 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -36,10 +36,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 33.375, 33.5 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -47,10 +47,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 33.4138, 33.276 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
@@ -58,10 +58,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 33.4498, 33.5771 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
@@ -69,10 +69,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 33.3399, 33.2981 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
@@ -80,7 +80,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 33.6738, 33.786 )
 
 [node name="Puzzle" type="Node2D"]
@@ -92,7 +92,7 @@ frames = SubResource( 1 )
 [node name="Pieces" type="Node2D" parent="."]
 
 [node name="A3" type="KinematicBody2D" parent="Pieces"]
-position = Vector2( 416, 304 )
+position = Vector2( 432.649, 270.702 )
 input_pickable = true
 script = ExtResource( 8 )
 __meta__ = {
@@ -103,10 +103,10 @@ __meta__ = {
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces/A3"]
-shape = SubResource( 10 )
+shape = SubResource( 3 )
 
 [node name="B1" type="KinematicBody2D" parent="Pieces"]
-position = Vector2( 152, 432 )
+position = Vector2( 458.815, 327.35 )
 input_pickable = true
 script = ExtResource( 8 )
 __meta__ = {
@@ -114,13 +114,13 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pieces/B1"]
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces/B1"]
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="B2" type="KinematicBody2D" parent="Pieces"]
-position = Vector2( 352, 480 )
+position = Vector2( 525.624, 326.592 )
 input_pickable = true
 script = ExtResource( 8 )
 __meta__ = {
@@ -128,13 +128,13 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pieces/B2"]
-frames = SubResource( 4 )
+frames = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces/B2"]
-shape = SubResource( 12 )
+shape = SubResource( 7 )
 
 [node name="B3" type="KinematicBody2D" parent="Pieces"]
-position = Vector2( 402.09, 594.641 )
+position = Vector2( 44.1387, 597.019 )
 input_pickable = true
 script = ExtResource( 8 )
 __meta__ = {
@@ -142,13 +142,13 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pieces/B3"]
-frames = SubResource( 5 )
+frames = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces/B3"]
-shape = SubResource( 13 )
+shape = SubResource( 9 )
 
 [node name="A1" type="KinematicBody2D" parent="Pieces"]
-position = Vector2( 478.222, 428.61 )
+position = Vector2( 406.87, 235.958 )
 input_pickable = true
 script = ExtResource( 8 )
 __meta__ = {
@@ -156,10 +156,10 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pieces/A1"]
-frames = SubResource( 6 )
+frames = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces/A1"]
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="A2" type="KinematicBody2D" parent="Pieces"]
 position = Vector2( 160, 213 )
@@ -170,10 +170,10 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pieces/A2"]
-frames = SubResource( 8 )
+frames = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces/A2"]
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 [connection signal="input_event" from="Pieces/A3" to="Pieces/A3" method="_on_KinematicBody2D_input_event"]
 [connection signal="input_event" from="Pieces/B1" to="Pieces/B1" method="_on_KinematicBody2D_input_event"]
 [connection signal="input_event" from="Pieces/B2" to="Pieces/B2" method="_on_KinematicBody2D_input_event"]

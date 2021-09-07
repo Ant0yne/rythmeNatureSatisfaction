@@ -1,6 +1,10 @@
 extends KinematicBody2D
 
-var dragging = false
+var dragging = bool(false)
+var origine_espace_puzzle_x = int(576)
+var origine_espace_puzzle_y = int(18)
+var taille_piece = int(68)
+var rayon_piece = int(34)
 
 signal dragsignal;
 
@@ -22,12 +26,14 @@ func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
 		elif event.button_index == BUTTON_LEFT and !event.pressed:
 			if self.position >= Vector2(576,18) and self.position <= Vector2(1255,696) :
 				emit_signal("dragsignal")
-#				var division = (self.position.x - 576)/68
-#				print(division)
-#				var round_division = round(division)
-#				print(round_division)
-				self.position.x = ((round(self.position.x - 576)/68)*68)+34 + 576
-				self.position.y = ((round(self.position.y - 18)/68)*68)+34 + 18
+
+				var position_x = (self.position.x - origine_espace_puzzle_x)/taille_piece
+				var position_x_tronque = int(position_x)
+				self.position.x = (position_x_tronque*taille_piece)+rayon_piece + origine_espace_puzzle_x
+				var position_y = (self.position.y - origine_espace_puzzle_y)/taille_piece
+				var position_y_tronque = int(position_y)
+				self.position.y = (position_y_tronque*taille_piece)+rayon_piece + origine_espace_puzzle_y
+
 				print("Je suis dans le carre rouge")
 			else :
 				print("Je suis dehors")
