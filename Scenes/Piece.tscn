@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scrips/Pieces.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33, 33.125 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.1134, 3.2902 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3.1192, 34.0413 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 3.29597, 34.0413 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 34.1435, 3.10535 )
+
+[node name="Piece" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="ZoneClicable" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Haut" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Haut"]
+position = Vector2( -0.0582428, -38.6176 )
+shape = SubResource( 3 )
+
+[node name="Droite" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Droite"]
+position = Vector2( 37.9186, 0.0883865 )
+shape = SubResource( 4 )
+
+[node name="Gauche" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gauche"]
+position = Vector2( -38.6257, 0 )
+shape = SubResource( 5 )
+
+[node name="Bas" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bas"]
+position = Vector2( 0.0883865, 38.3605 )
+shape = SubResource( 6 )
+
+[node name="HBHaut" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBHaut"]
+position = Vector2( -0.0582428, -38.6176 )
+shape = SubResource( 3 )
+
+[node name="HBDroite" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBDroite"]
+position = Vector2( 37.9186, 0.0883865 )
+shape = SubResource( 4 )
+
+[node name="HBGauche" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBGauche"]
+position = Vector2( -38.6257, 0 )
+shape = SubResource( 5 )
+
+[node name="HBBas" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBBas"]
+position = Vector2( 0.0883865, 38.3605 )
+shape = SubResource( 6 )
+[connection signal="input_event" from="." to="." method="_on_KinematicBody2D_input_event"]
+[connection signal="area_entered" from="Haut" to="." method="_on_Haut_area_entered"]
+[connection signal="area_entered" from="Droite" to="." method="_on_Droite_area_entered"]
+[connection signal="area_entered" from="Gauche" to="." method="_on_Gauche_area_entered"]
+[connection signal="area_entered" from="Bas" to="." method="_on_Bas_area_entered"]
