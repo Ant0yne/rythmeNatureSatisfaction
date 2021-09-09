@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const PieceEffetBonnePos = preload("res://Scenes/PieceEffetBonnePos.tscn")
+
 onready var area_2d_coll_haut = get_node("Haut/CollisionShape2D")
 onready var area_2d_coll_bas = get_node("Bas/CollisionShape2D")
 onready var area_2d_coll_gauche = get_node("Gauche/CollisionShape2D")
@@ -127,8 +129,9 @@ func _check_position_finale() :
 	if self_index_liste == self_index_position and en_bonne_position == false :
 		listes.nbre_bonne_position +=1
 		en_bonne_position = true
-		print("nombre piece bien place :", listes.nbre_bonne_position)
-		print(en_bonne_position)
+		_creation_effet_bonne_pos()
+#		print("nombre piece bien place :", listes.nbre_bonne_position)
+#		print(en_bonne_position)
 		if self_index_position >= 0 and self_index_position <= 19:
 			frame_compteur.ligne_son = 10
 		elif self_index_position >= 20 and self_index_position <= 39:
@@ -168,6 +171,11 @@ func _check_position_finale() :
 			frame_compteur.ligne_son = 7
 		elif self_index_position >= 90 and self_index_position <= 99:
 			frame_compteur.ligne_son = 8
+
+func _creation_effet_bonne_pos():
+	var pieceEffetBonnePos = PieceEffetBonnePos.instance()
+	add_child(pieceEffetBonnePos)
+	pieceEffetBonnePos.global_position = global_position
 	
 #func _on_Droite_area_entered(body):
 #	if body != self:
