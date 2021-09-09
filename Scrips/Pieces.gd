@@ -30,7 +30,7 @@ var origine_zone_pop_y = int(200)
 var limite_zone_pop_x = int(540)
 var limite_zone_pop_y = int(700)
 var en_bonne_position = bool(false)
-var superposition
+var piece_prise = bool(false)
 
 signal dragsignal;
 
@@ -56,19 +56,19 @@ func _set_drag_pc():
 
 func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed :
+		if event.button_index == BUTTON_LEFT and event.pressed and piece_prise == false and listes.piece_prise == 0:
+			listes.piece_prise += 1
+			piece_prise = true
 #			area_2d_coll_haut.disabled = false
 #			area_2d_coll_bas.disabled = false
 #			area_2d_coll_gauche.disabled = false
 #			area_2d_coll_droite.disabled = false
 			emit_signal("dragsignal")
-		elif event.button_index == BUTTON_LEFT and !event.pressed:
-			if superposition == true :
-				self.position.x -= rayon_piece
+		elif event.button_index == BUTTON_LEFT and !event.pressed and piece_prise == true:
+			emit_signal("dragsignal")
 			if self.position.x >= origine_espace_puzzle_x and self.position.x <= limite_espace_puzzle_x and self.position.y >= origine_espace_puzzle_y and self.position.y <= limite_espace_puzzle_y:
 #				if piece_bas == false:
 					frame_compteur.son_piece_pose = true
-					emit_signal("dragsignal")
 #					area_2d_coll_haut.disabled = true
 #					area_2d_coll_bas.disabled = true
 #					area_2d_coll_gauche.disabled = true
@@ -80,6 +80,8 @@ func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
 					var position_y_tronque = int(position_y)
 					self.position.y = (position_y_tronque*taille_piece)+rayon_piece + origine_espace_puzzle_y
 					_check_position_finale()
+					piece_prise = false
+					listes.piece_prise = 0
 #				if piece_bas == true :
 #					frame_compteur.son_piece_pose = true
 #					emit_signal("dragsignal")
@@ -90,29 +92,32 @@ func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
 #					self.position.x = position_piece_cible.x
 #					self.position.y = position_piece_cible.y - 68
 #					piece_bas = false
-			elif self.position.x > limite_espace_puzzle_x or self.position.y > limite_espace_puzzle_y or self.position.y < origine_espace_puzzle_y:
-				emit_signal("dragsignal")
+			elif self.position.x > limite_espace_puzzle_x or self.position.x < 0 or self.position.y > limite_espace_puzzle_y or self.position.y < origine_espace_puzzle_y:
 #				area_2d_coll_haut.disabled = true
 #				area_2d_coll_bas.disabled = true
 #				area_2d_coll_gauche.disabled = true
 #				area_2d_coll_droite.disabled = true
 				self.position = Vector2(rand_range(origine_zone_pop_x, limite_zone_pop_x), rand_range(origine_zone_pop_y, limite_zone_pop_y))
+				piece_prise = false
+				listes.piece_prise = 0
 			else :
-#				if piece_bas == false:
-#					area_2d_coll_haut.disabled = true
-#					area_2d_coll_bas.disabled = true
-#					area_2d_coll_gauche.disabled = true
-#					area_2d_coll_droite.disabled = true
-					emit_signal("dragsignal")
-#				if piece_bas == true :
-#					area_2d_coll_haut.disabled = true
-#					area_2d_coll_bas.disabled = true
-#					area_2d_coll_gauche.disabled = true
-#					area_2d_coll_droite.disabled = true
+				piece_prise = false
+				listes.piece_prise = 0
+##				if piece_bas == false:
+##					area_2d_coll_haut.disabled = true
+##					area_2d_coll_bas.disabled = true
+##					area_2d_coll_gauche.disabled = true
+##					area_2d_coll_droite.disabled = true
 #					emit_signal("dragsignal")
-#					self.position.x = position_piece_cible.x
-#					self.position.y = position_piece_cible.y - 68
-#					piece_bas = false
+##				if piece_bas == true :
+##					area_2d_coll_haut.disabled = true
+##					area_2d_coll_bas.disabled = true
+##					area_2d_coll_gauche.disabled = true
+##					area_2d_coll_droite.disabled = true
+##					emit_signal("dragsignal")
+##					self.position.x = position_piece_cible.x
+##					self.position.y = position_piece_cible.y - 68
+##					piece_bas = false
 
 func _check_position_finale() :
 	var self_index_liste = int(listes.liste_piece.find(self.get_name(),0))
@@ -129,15 +134,7 @@ func _check_position_finale() :
 		en_bonne_position = false
 		print("nombre piece bien place :", listes.nbre_bonne_position)
 		print(en_bonne_position)
-
-func _on_Superposition_area_entered(area):
-	if area != self:
-		superposition = true
-
-func _on_Superposition_area_exited(area):
-	if area != self :
-		superposition = false
-
+	
 #func _on_Droite_area_entered(body):
 #	if body != self:
 #		var self_index_liste = int(liste_piece.find(self.get_name(), 0))
@@ -146,7 +143,6 @@ func _on_Superposition_area_exited(area):
 #		if piece_index_liste == (self_index_liste + index_piece_droite) :
 #			print("Collage à droite")
 #
-#
 #func _on_Haut_area_entered(body):
 #	if body != self:
 #		var self_index_liste = int(liste_piece.find(self.get_name(), 0))
@@ -154,7 +150,6 @@ func _on_Superposition_area_exited(area):
 ##		print("moi : ", self_index_liste, "l'autre : ", piece_index_liste)
 #		if piece_index_liste == (self_index_liste - index_piece_haut) :
 #			print("Collage en haut")
-#
 #
 #func _on_Gauche_area_entered(body):
 #	if body != self:

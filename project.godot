@@ -36,7 +36,11 @@ enabled=PoolStringArray( "mixing-desk" )
 [layer_names]
 
 2d_render/layer_1="Haut"
-2d_physics/layer_1="Haut"
+2d_physics/layer_1="Haut vers Bas"
+2d_physics/layer_2="Droite vers Gauche"
+2d_physics/layer_3="Gauche vers Droite"
+2d_physics/layer_4="Bas vers Haut"
+2d_physics/layer_5="Superposition"
 
 [rendering]
 

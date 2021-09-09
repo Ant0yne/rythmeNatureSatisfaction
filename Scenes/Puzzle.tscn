@@ -110,15 +110,12 @@ script = ExtResource( 77 )
 position = Vector2( 640, 360 )
 frames = SubResource( 1 )
 
-[node name="Pieces" type="Node2D" parent="."]
-script = ExtResource( 3 )
-
 [node name="Fumee" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.294118 )
 position = Vector2( 143.732, 627.116 )
 scale = Vector2( 0.714216, 0.714216 )
 frames = SubResource( 2 )
-frame = 17
+frame = 40
 playing = true
 flip_h = true
 script = ExtResource( 78 )
@@ -136,8 +133,11 @@ frame = 13
 position = Vector2( 222.2, 66.7968 )
 scale = Vector2( 1, 0.989417 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
+
+[node name="Pieces" type="Node2D" parent="."]
+script = ExtResource( 3 )
 
 [node name="RanSoundContainer" type="Node" parent="."]
 script = ExtResource( 5 )

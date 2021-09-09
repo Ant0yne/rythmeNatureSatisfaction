@@ -3,6 +3,7 @@ extends Node
 var premiere_position = Vector2(609,50)
 var nbre_bonne_position = int(0)
 var puzzle_fini = int(100)
+var piece_prise = int(0)
 
 var liste_piece = [
 'Piece',
