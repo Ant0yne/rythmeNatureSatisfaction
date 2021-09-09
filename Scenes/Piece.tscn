@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scrips/Pieces.gd" type="Script" id=1]
 [ext_resource path="res://Assets Graphiques/Pieces/Puzzle_v2.png" type="Texture" id=2]
@@ -17,6 +17,8 @@ extents = Vector2( 3.29597, 34.0413 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 34.1435, 3.10535 )
+
+[sub_resource type="RectangleShape2D" id=6]
 
 [node name="Piece" type="KinematicBody2D"]
 input_pickable = true
@@ -89,8 +91,24 @@ shape = SubResource( 5 )
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 10
+
+[node name="Superposition" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Superposition"]
+shape = SubResource( 6 )
+
+[node name="SuperpositionRecu" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuperpositionRecu"]
+shape = SubResource( 6 )
 [connection signal="input_event" from="." to="." method="_on_KinematicBody2D_input_event"]
 [connection signal="area_entered" from="Haut" to="." method="_on_Haut_area_entered"]
 [connection signal="area_entered" from="Droite" to="." method="_on_Droite_area_entered"]
 [connection signal="area_entered" from="Gauche" to="." method="_on_Gauche_area_entered"]
 [connection signal="area_entered" from="Bas" to="." method="_on_Bas_area_entered"]
+[connection signal="area_entered" from="Superposition" to="." method="_on_Superposition_area_entered"]
+[connection signal="area_exited" from="Superposition" to="." method="_on_Superposition_area_exited"]

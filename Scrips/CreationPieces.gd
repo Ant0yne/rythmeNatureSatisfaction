@@ -12,10 +12,12 @@ var origine_zone_pop_y = int(200)
 var limite_zone_pop_x = int(540)
 var limite_zone_pop_y = int(700)
 
+var max_piece = 100
+
 func _ready():
 	_random_position()
 	frame_compteur.frame_compteur = 0
-	while self.get_child_count() < 100:
+	while self.get_child_count() < max_piece:
 		piece = Piece.instance()
 		piece.global_position = position_creation
 		add_child(piece)

@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 FrameCompteur="*res://Scrips/FrameCompteur.gd"
+Listes="*res://Scrips/Listes.gd"
 
 [display]
 
@@ -31,6 +32,11 @@ window/size/height=720
 [editor_plugins]
 
 enabled=PoolStringArray( "mixing-desk" )
+
+[layer_names]
+
+2d_render/layer_1="Haut"
+2d_physics/layer_1="Haut"
 
 [rendering]
 
