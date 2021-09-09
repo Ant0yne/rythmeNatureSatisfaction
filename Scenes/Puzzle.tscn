@@ -1,11 +1,82 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=81 format=2]
 
-[ext_resource path="res://Assets Graphiques/Scene_test.png" type="Texture" id=1]
-[ext_resource path="res://Assets Graphiques/Pieces/B2_test.png" type="Texture" id=3]
-[ext_resource path="res://Assets Graphiques/Pieces/A3_test.png" type="Texture" id=5]
-[ext_resource path="res://Assets Graphiques/Pieces/A1_test.png" type="Texture" id=6]
-[ext_resource path="res://Assets Graphiques/Pieces/A2_test.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Piece.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Scène.png" type="Texture" id=1]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée52.png" type="Texture" id=2]
+[ext_resource path="res://Scrips/CreationPieces.gd" type="Script" id=3]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée49.png" type="Texture" id=4]
+[ext_resource path="res://addons/mixing-desk/sound/nonspatial/ran_cont.gd" type="Script" id=5]
+[ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_3.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_4.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée59.png" type="Texture" id=8]
+[ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée50.png" type="Texture" id=10]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée51.png" type="Texture" id=11]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée55.png" type="Texture" id=12]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée57.png" type="Texture" id=13]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée54.png" type="Texture" id=14]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée48.png" type="Texture" id=15]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée56.png" type="Texture" id=16]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée58.png" type="Texture" id=17]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée53.png" type="Texture" id=18]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée46.png" type="Texture" id=19]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée47.png" type="Texture" id=20]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée00.png" type="Texture" id=21]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée21.png" type="Texture" id=22]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée35.png" type="Texture" id=23]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée36.png" type="Texture" id=24]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée08.png" type="Texture" id=25]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée37.png" type="Texture" id=26]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée38.png" type="Texture" id=27]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée39.png" type="Texture" id=28]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée14.png" type="Texture" id=29]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée01.png" type="Texture" id=30]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée03.png" type="Texture" id=31]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée10.png" type="Texture" id=32]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée11.png" type="Texture" id=33]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée13.png" type="Texture" id=34]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée12.png" type="Texture" id=35]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée15.png" type="Texture" id=36]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée06.png" type="Texture" id=37]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée16.png" type="Texture" id=38]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée18.png" type="Texture" id=39]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée22.png" type="Texture" id=40]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée24.png" type="Texture" id=41]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée27.png" type="Texture" id=42]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée02.png" type="Texture" id=43]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée09.png" type="Texture" id=44]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée23.png" type="Texture" id=45]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée04.png" type="Texture" id=46]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée25.png" type="Texture" id=47]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée20.png" type="Texture" id=48]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée05.png" type="Texture" id=49]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée07.png" type="Texture" id=50]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée26.png" type="Texture" id=51]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée28.png" type="Texture" id=52]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée29.png" type="Texture" id=53]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée30.png" type="Texture" id=54]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée31.png" type="Texture" id=55]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée17.png" type="Texture" id=56]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée19.png" type="Texture" id=57]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée32.png" type="Texture" id=58]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée33.png" type="Texture" id=59]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée34.png" type="Texture" id=60]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée43.png" type="Texture" id=61]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée44.png" type="Texture" id=62]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée45.png" type="Texture" id=63]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée40.png" type="Texture" id=64]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée42.png" type="Texture" id=65]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée41.png" type="Texture" id=66]
+[ext_resource path="res://icon.png" type="Texture" id=67]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0003.png" type="Texture" id=68]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0005.png" type="Texture" id=69]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0001.png" type="Texture" id=70]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0002.png" type="Texture" id=71]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0004.png" type="Texture" id=72]
+[ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0000.png" type="Texture" id=73]
+[ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_5.wav" type="AudioStream" id=74]
+[ext_resource path="res://Assets Sonore/SD/Son Fond/Mer+Vent+CigalesV1.ogg" type="AudioStream" id=75]
+[ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_2.wav" type="AudioStream" id=76]
+[ext_resource path="res://Scenes/Puzzle.gd" type="Script" id=77]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -15,66 +86,76 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 30 ), ExtResource( 43 ), ExtResource( 31 ), ExtResource( 46 ), ExtResource( 49 ), ExtResource( 37 ), ExtResource( 50 ), ExtResource( 25 ), ExtResource( 44 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 56 ), ExtResource( 39 ), ExtResource( 57 ), ExtResource( 48 ), ExtResource( 22 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 51 ), ExtResource( 42 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 64 ), ExtResource( 66 ), ExtResource( 65 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 12.0
 } ]
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 69 ), ExtResource( 73 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 68 ), ExtResource( 72 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=22]
-animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=23]
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [node name="Puzzle" type="Node2D"]
+script = ExtResource( 77 )
 
 [node name="Fond" type="AnimatedSprite" parent="."]
 position = Vector2( 640, 360 )
 frames = SubResource( 1 )
 
 [node name="Pieces" type="Node2D" parent="."]
+script = ExtResource( 3 )
 
-[node name="Piece" parent="Pieces" instance=ExtResource( 9 )]
-position = Vector2( 126.675, 250.918 )
+[node name="Fumee" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.294118 )
+position = Vector2( 143.732, 627.116 )
+scale = Vector2( 0.714216, 0.714216 )
+frames = SubResource( 2 )
+frame = 33
+playing = true
+flip_h = true
 
-[node name="A1" type="AnimatedSprite" parent="Pieces/Piece"]
-frames = SubResource( 20 )
+[node name="Regle" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1261, 702 )
+scale = Vector2( 8.15375, 7.73378 )
+texture = ExtResource( 67 )
+vframes = 10
+hframes = 10
+frame = 13
 
-[node name="Piece1" parent="Pieces" instance=ExtResource( 9 )]
-position = Vector2( 295.201, 265.998 )
+[node name="Beat" type="AnimatedSprite" parent="."]
+position = Vector2( 222.2, 66.7968 )
+scale = Vector2( 1, 0.989417 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="A2" type="AnimatedSprite" parent="Pieces/Piece1"]
-frames = SubResource( 21 )
+[node name="RanSoundContainer" type="Node" parent="."]
+script = ExtResource( 5 )
+sound_number = 1
 
-[node name="Piece2" parent="Pieces" instance=ExtResource( 9 )]
-position = Vector2( 457.708, 272.103 )
+[node name="BruitPiece" type="AudioStreamPlayer" parent="RanSoundContainer"]
+stream = ExtResource( 9 )
 
-[node name="A3" type="AnimatedSprite" parent="Pieces/Piece2"]
-frames = SubResource( 22 )
+[node name="BruitPiece2" type="AudioStreamPlayer" parent="RanSoundContainer"]
+stream = ExtResource( 76 )
 
-[node name="Piece11" parent="Pieces" instance=ExtResource( 9 )]
-position = Vector2( 283.173, 573.009 )
+[node name="BruitPiece3" type="AudioStreamPlayer" parent="RanSoundContainer"]
+stream = ExtResource( 6 )
 
-[node name="B2" type="AnimatedSprite" parent="Pieces/Piece11"]
-frames = SubResource( 23 )
+[node name="BruitPiece4" type="AudioStreamPlayer" parent="RanSoundContainer"]
+stream = ExtResource( 7 )
+
+[node name="BruitPiece5" type="AudioStreamPlayer" parent="RanSoundContainer"]
+stream = ExtResource( 74 )
+
+[node name="SonFond" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 75 )
+volume_db = -19.184
+autoplay = true
