@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Scène.png" type="Texture" id=1]
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée52.png" type="Texture" id=2]
@@ -73,13 +73,34 @@
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0002.png" type="Texture" id=71]
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0004.png" type="Texture" id=72]
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Beat/Beat_anim0000.png" type="Texture" id=73]
-[ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_5.wav" type="AudioStream" id=74]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Hihat - feedback - 1.wav" type="AudioStream" id=74]
 [ext_resource path="res://Assets Sonore/SD/Son Fond/Mer+Vent+CigalesV1.ogg" type="AudioStream" id=75]
 [ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_2.wav" type="AudioStream" id=76]
 [ext_resource path="res://Scrips/Puzzle.gd" type="Script" id=77]
 [ext_resource path="res://Scrips/Fumee.gd" type="Script" id=78]
 [ext_resource path="res://Assets Sonore/SD/Secouage_v3-3.wav" type="AudioStream" id=79]
 [ext_resource path="res://Assets Graphiques/Pieces/Puzzle_v2.png" type="Texture" id=80]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 6.wav" type="AudioStream" id=81]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Kick - feedback - 1.wav" type="AudioStream" id=82]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Accord - feedback - 1.wav" type="AudioStream" id=83]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Accord - feedback - 3.wav" type="AudioStream" id=84]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Accord - feedback - 4.wav" type="AudioStream" id=85]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 1.wav" type="AudioStream" id=86]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 2.wav" type="AudioStream" id=87]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 3.wav" type="AudioStream" id=88]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 4.wav" type="AudioStream" id=89]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 5.wav" type="AudioStream" id=90]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Accord - feedback - 2.wav" type="AudioStream" id=91]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Rimshot - feedback - 1.wav" type="AudioStream" id=92]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Guitare - feedback - 4.wav" type="AudioStream" id=93]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Guitare - feedback - 3.wav" type="AudioStream" id=94]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 3.wav" type="AudioStream" id=95]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 5.wav" type="AudioStream" id=96]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 4.wav" type="AudioStream" id=97]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Guitare - feedback - 1.wav" type="AudioStream" id=98]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Guitare - feedback - 2.wav" type="AudioStream" id=99]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 1.wav" type="AudioStream" id=100]
+[ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 2.wav" type="AudioStream" id=101]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -117,7 +138,7 @@ modulate = Color( 1, 1, 1, 0.294118 )
 position = Vector2( 143.732, 627.116 )
 scale = Vector2( 0.714216, 0.714216 )
 frames = SubResource( 2 )
-frame = 41
+frame = 28
 playing = true
 flip_h = true
 script = ExtResource( 78 )
@@ -135,11 +156,16 @@ frame = 13
 position = Vector2( 222.2, 66.7968 )
 scale = Vector2( 1, 0.989417 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Pieces" type="Node2D" parent="."]
 script = ExtResource( 3 )
+
+[node name="PuzzleFini" type="Sprite" parent="."]
+visible = false
+position = Vector2( 915, 356 )
+texture = ExtResource( 80 )
 
 [node name="SonFond" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 75 )
@@ -154,52 +180,104 @@ stream = ExtResource( 79 )
 [node name="SonsLigne1Et2" type="Node2D" parent="SonsLigne"]
 script = ExtResource( 5 )
 
-[node name="BruitPiece" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne1Et2"]
-stream = ExtResource( 9 )
+[node name="Guitare1" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne1Et2"]
+stream = ExtResource( 98 )
+
+[node name="Guitare2" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne1Et2"]
+stream = ExtResource( 99 )
+
+[node name="Guitare3" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne1Et2"]
+stream = ExtResource( 94 )
+
+[node name="Guitare4" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne1Et2"]
+stream = ExtResource( 93 )
 
 [node name="SonsLigne3Et4" type="Node2D" parent="SonsLigne"]
 script = ExtResource( 5 )
 
-[node name="BruitPiece2" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
-stream = ExtResource( 76 )
+[node name="Melodie1" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
+stream = ExtResource( 100 )
+
+[node name="Melodie2" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
+stream = ExtResource( 101 )
+
+[node name="Melodie3" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
+stream = ExtResource( 95 )
+
+[node name="Melodie4" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
+stream = ExtResource( 97 )
+
+[node name="Melodie5" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
+stream = ExtResource( 96 )
+
+[node name="Melodie6" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne3Et4"]
+stream = ExtResource( 92 )
 
 [node name="SonsLigne5" type="Node2D" parent="SonsLigne"]
 script = ExtResource( 5 )
 
-[node name="BruitPiece3" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne5"]
-stream = ExtResource( 6 )
+[node name="Accord1" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne5"]
+stream = ExtResource( 83 )
+
+[node name="Accord2" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne5"]
+stream = ExtResource( 91 )
+
+[node name="Accord3" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne5"]
+stream = ExtResource( 84 )
+
+[node name="Accord4" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne5"]
+stream = ExtResource( 85 )
 
 [node name="SonsLigne6" type="Node2D" parent="SonsLigne"]
 script = ExtResource( 5 )
 
-[node name="BruitPiece4" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
-stream = ExtResource( 7 )
+[node name="Basse1" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
+stream = ExtResource( 86 )
+
+[node name="Basse2" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
+stream = ExtResource( 87 )
+
+[node name="Basse3" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
+stream = ExtResource( 88 )
+
+[node name="Basse4" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
+stream = ExtResource( 89 )
+
+[node name="Basse5" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
+stream = ExtResource( 90 )
+
+[node name="Basse6" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne6"]
+stream = ExtResource( 81 )
 
 [node name="SonsLigne7" type="Node2D" parent="SonsLigne"]
 script = ExtResource( 5 )
 
-[node name="BruitPiece5" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne7"]
+[node name="Hihat" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne7"]
 stream = ExtResource( 74 )
 
 [node name="SonsLigne8" type="Node2D" parent="SonsLigne"]
 script = ExtResource( 5 )
 
-[node name="BruitPiece" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne8"]
+[node name="Rim" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne8"]
+stream = ExtResource( 92 )
+
+[node name="SonsLigne9Et10" type="Node2D" parent="SonsLigne"]
+script = ExtResource( 5 )
+
+[node name="Kick" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne9Et10"]
+stream = ExtResource( 82 )
+
+[node name="BruitPiece" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="BruitPiece1" type="AudioStreamPlayer" parent="BruitPiece"]
 stream = ExtResource( 9 )
 
-[node name="SonsLigne9" type="Node2D" parent="SonsLigne"]
-script = ExtResource( 5 )
-
-[node name="BruitPiece2" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne9"]
+[node name="BruitPiece2" type="AudioStreamPlayer" parent="BruitPiece"]
 stream = ExtResource( 76 )
 
-[node name="SonsLigne10" type="Node2D" parent="SonsLigne"]
-script = ExtResource( 5 )
-
-[node name="BruitPiece3" type="AudioStreamPlayer" parent="SonsLigne/SonsLigne10"]
+[node name="BruitPiece3" type="AudioStreamPlayer" parent="BruitPiece"]
 stream = ExtResource( 6 )
 
-[node name="PuzzleFini" type="Sprite" parent="."]
-visible = false
-position = Vector2( 915, 356 )
-texture = ExtResource( 80 )
+[node name="BruitPiece4" type="AudioStreamPlayer" parent="BruitPiece"]
+stream = ExtResource( 7 )

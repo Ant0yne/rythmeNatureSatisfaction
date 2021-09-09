@@ -167,10 +167,8 @@ func _check_position_finale() :
 			frame_compteur.ligne_son = 5
 		elif self_index_position >= 70 and self_index_position <= 79:
 			frame_compteur.ligne_son = 6
-		elif self_index_position >= 80 and self_index_position <= 89:
+		elif self_index_position >= 80 and self_index_position <= 99:
 			frame_compteur.ligne_son = 7
-		elif self_index_position >= 90 and self_index_position <= 99:
-			frame_compteur.ligne_son = 8
 
 func _creation_effet_bonne_pos():
 	var pieceEffetBonnePos = PieceEffetBonnePos.instance()

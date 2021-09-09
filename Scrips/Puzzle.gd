@@ -6,8 +6,8 @@ onready var sonsLigne5 = $SonsLigne/SonsLigne5
 onready var sonsLigne6 = $SonsLigne/SonsLigne6
 onready var sonsLigne7 = $SonsLigne/SonsLigne7
 onready var sonsLigne8 = $SonsLigne/SonsLigne8
-onready var sonsLigne9 = $SonsLigne/SonsLigne9
-onready var sonsLigne10 = $SonsLigne/SonsLigne10
+onready var sonsLigne9Et10 = $SonsLigne/SonsLigne9Et10
+
 onready var test = $Test
 onready var puzzleFini = $PuzzleFini
 onready var frame_compteur = FrameCompteur
@@ -35,9 +35,7 @@ func _piece_pose():
 	if frame_compteur.ligne_son == 6:
 		sonsLigne8.play()
 	if frame_compteur.ligne_son == 7:
-		sonsLigne9.play()
-	if frame_compteur.ligne_son == 8:
-		sonsLigne10.play()
+		sonsLigne9Et10.play()
 	if frame_compteur.ligne_son == 10:
 		test.play()
 	if frame_compteur.ligne_son == 20:
