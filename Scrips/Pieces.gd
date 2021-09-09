@@ -129,11 +129,45 @@ func _check_position_finale() :
 		en_bonne_position = true
 		print("nombre piece bien place :", listes.nbre_bonne_position)
 		print(en_bonne_position)
+		if self_index_position >= 0 and self_index_position <= 19:
+			frame_compteur.ligne_son = 10
+		elif self_index_position >= 20 and self_index_position <= 39:
+			frame_compteur.ligne_son = 20
+		elif self_index_position >= 40 and self_index_position <= 49:
+			frame_compteur.ligne_son = 30
+		elif self_index_position >= 50 and self_index_position <= 59:
+			frame_compteur.ligne_son = 40
+		elif self_index_position >= 60 and self_index_position <= 69:
+			frame_compteur.ligne_son = 50
+		elif self_index_position >= 70 and self_index_position <= 79:
+			frame_compteur.ligne_son = 60
+		elif self_index_position >= 80 and self_index_position <= 89:
+			frame_compteur.ligne_son = 70
+		elif self_index_position >= 90 and self_index_position <= 99:
+			frame_compteur.ligne_son = 80
 	if self_index_liste != self_index_position and en_bonne_position == true :
 		listes.nbre_bonne_position -=1
 		en_bonne_position = false
 		print("nombre piece bien place :", listes.nbre_bonne_position)
 		print(en_bonne_position)
+
+	if self_index_liste != self_index_position and en_bonne_position == false :
+		if self_index_position >= 0 and self_index_position <= 19:
+			frame_compteur.ligne_son = 1
+		elif self_index_position >= 20 and self_index_position <= 39:
+			frame_compteur.ligne_son = 2
+		elif self_index_position >= 40 and self_index_position <= 49:
+			frame_compteur.ligne_son = 3
+		elif self_index_position >= 50 and self_index_position <= 59:
+			frame_compteur.ligne_son = 4
+		elif self_index_position >= 60 and self_index_position <= 69:
+			frame_compteur.ligne_son = 5
+		elif self_index_position >= 70 and self_index_position <= 79:
+			frame_compteur.ligne_son = 6
+		elif self_index_position >= 80 and self_index_position <= 89:
+			frame_compteur.ligne_son = 7
+		elif self_index_position >= 90 and self_index_position <= 99:
+			frame_compteur.ligne_son = 8
 	
 #func _on_Droite_area_entered(body):
 #	if body != self:
