@@ -138,7 +138,7 @@ modulate = Color( 1, 1, 1, 0.294118 )
 position = Vector2( 143.732, 627.116 )
 scale = Vector2( 0.714216, 0.714216 )
 frames = SubResource( 2 )
-frame = 28
+frame = 43
 playing = true
 flip_h = true
 script = ExtResource( 78 )
@@ -156,7 +156,7 @@ frame = 13
 position = Vector2( 222.2, 66.7968 )
 scale = Vector2( 1, 0.989417 )
 frames = SubResource( 3 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Pieces" type="Node2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scrips/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets Graphiques/Bouton/Jouer_blanc.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets Graphiques/Bouton/Quitter_noir.png" type="Texture" id=5]
 [ext_resource path="res://Assets Graphiques/Bouton/Quitter_blanc.png" type="Texture" id=6]
 [ext_resource path="res://Assets Graphiques/Fond Menu/Fond.png" type="Texture" id=7]
+[ext_resource path="res://Assets Graphiques/Bouton/Credit_blanc.png" type="Texture" id=8]
+[ext_resource path="res://Assets Graphiques/Bouton/Credit_noir.png" type="Texture" id=9]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,14 +33,26 @@ __meta__ = {
 }
 
 [node name="Quitter" type="TextureButton" parent="."]
-margin_left = 869.473
-margin_top = 448.378
-margin_right = 1096.47
-margin_bottom = 535.378
+margin_left = 835.864
+margin_top = 455.863
+margin_right = 1062.86
+margin_bottom = 542.863
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Credit" type="TextureButton" parent="."]
+margin_left = 552.614
+margin_top = 586.384
+margin_right = 736.614
+margin_bottom = 652.384
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="Jouer" to="." method="_on_Jouer_button_up"]
 [connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]
+[connection signal="button_up" from="Credit" to="." method="_on_Credit_button_up"]
