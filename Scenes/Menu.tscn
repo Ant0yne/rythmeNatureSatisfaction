@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scrips/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets Graphiques/Bouton/Jouer_blanc.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets Graphiques/Fond Menu/Fond.png" type="Texture" id=7]
 [ext_resource path="res://Assets Graphiques/Bouton/Credit_blanc.png" type="Texture" id=8]
 [ext_resource path="res://Assets Graphiques/Bouton/Credit_noir.png" type="Texture" id=9]
+[ext_resource path="res://Assets Graphiques/Ecran_noir.png" type="Texture" id=10]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -53,6 +54,11 @@ texture_hover = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Ecran noir" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 640, 360 )
+texture = ExtResource( 10 )
 [connection signal="button_up" from="Jouer" to="." method="_on_Jouer_button_up"]
 [connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]
 [connection signal="button_up" from="Credit" to="." method="_on_Credit_button_up"]

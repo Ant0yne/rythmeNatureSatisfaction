@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Scène.png" type="Texture" id=1]
 [ext_resource path="res://Assets Graphiques/FondPuzzle/Fumee/Fumée52.png" type="Texture" id=2]
@@ -78,7 +78,7 @@
 [ext_resource path="res://Assets Sonore/SD/Bruit Piece/Bruit Piece_2.wav" type="AudioStream" id=76]
 [ext_resource path="res://Scrips/Puzzle.gd" type="Script" id=77]
 [ext_resource path="res://Scrips/Fumee.gd" type="Script" id=78]
-[ext_resource path="res://Assets Sonore/SD/Secouage_v3-3.wav" type="AudioStream" id=79]
+[ext_resource path="res://Assets Sonore/SD/BonnePosition.wav" type="AudioStream" id=79]
 [ext_resource path="res://Assets Graphiques/Pieces/Puzzle_v2.png" type="Texture" id=80]
 [ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Basse - feedback - 6.wav" type="AudioStream" id=81]
 [ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Kick - feedback - 1.wav" type="AudioStream" id=82]
@@ -103,6 +103,7 @@
 [ext_resource path="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 2.wav" type="AudioStream" id=101]
 [ext_resource path="res://addons/mixing-desk/music/mixing_desk_music.gd" type="Script" id=102]
 [ext_resource path="res://addons/mixing-desk/music/song.gd" type="Script" id=103]
+[ext_resource path="res://Assets Graphiques/Ecran_noir.png" type="Texture" id=104]
 [ext_resource path="res://Assets Sonore/SD/Boucle Piece Pose/Puzzle - Accord - boucle.wav" type="AudioStream" id=105]
 [ext_resource path="res://Assets Sonore/SD/Boucle Piece Pose/Puzzle - Basse - boucle.wav" type="AudioStream" id=106]
 [ext_resource path="res://Assets Sonore/SD/Boucle Piece Pose/Puzzle - Guitare - boucle intro.wav" type="AudioStream" id=107]
@@ -149,7 +150,7 @@ modulate = Color( 1, 1, 1, 0.294118 )
 position = Vector2( 143.732, 627.116 )
 scale = Vector2( 0.714216, 0.714216 )
 frames = SubResource( 2 )
-frame = 6
+frame = 29
 playing = true
 flip_h = true
 script = ExtResource( 78 )
@@ -167,7 +168,7 @@ frame = 13
 position = Vector2( 222.2, 66.7968 )
 scale = Vector2( 1, 0.989417 )
 frames = SubResource( 3 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Pieces" type="Node2D" parent="."]
@@ -177,6 +178,11 @@ script = ExtResource( 3 )
 visible = false
 position = Vector2( 915, 356 )
 texture = ExtResource( 80 )
+
+[node name="Ecran noir" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 640, 360 )
+texture = ExtResource( 104 )
 
 [node name="SonFond" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 75 )

@@ -2,7 +2,7 @@ extends Node
 
 var premiere_position = Vector2(609,50)
 var nbre_bonne_position = int(0)
-var puzzle_fini = int(100)
+var puzzle_fini = int(5)
 var destruction_piece = bool(false)
 var piece_prise = int(0)
 
@@ -120,7 +120,6 @@ Vector2(1017,50),
 Vector2(1085,50),
 Vector2(1153,50),
 Vector2(1221,50),
-
 Vector2(609,118),
 Vector2(677,118),
 Vector2(745,118),
@@ -131,7 +130,6 @@ Vector2(1017,118),
 Vector2(1085,118),
 Vector2(1153,118),
 Vector2(1221,118),
-
 Vector2(609,186),
 Vector2(677,186),
 Vector2(745,186),
@@ -142,7 +140,6 @@ Vector2(1017,186),
 Vector2(1085,186),
 Vector2(1153,186),
 Vector2(1221,186),
-
 Vector2(609,254),
 Vector2(677,254),
 Vector2(745,254),
@@ -153,7 +150,6 @@ Vector2(1017,254),
 Vector2(1085,254),
 Vector2(1153,254),
 Vector2(1221,254),
-
 Vector2(609,322),
 Vector2(677,322),
 Vector2(745,322),
@@ -164,7 +160,6 @@ Vector2(1017,322),
 Vector2(1085,322),
 Vector2(1153,322),
 Vector2(1221,322),
-
 Vector2(609,390),
 Vector2(677,390),
 Vector2(745,390),
@@ -175,7 +170,6 @@ Vector2(1017,390),
 Vector2(1085,390),
 Vector2(1153,390),
 Vector2(1221,390),
-
 Vector2(609,458),
 Vector2(677,458),
 Vector2(745,458),
@@ -186,7 +180,6 @@ Vector2(1017,458),
 Vector2(1085,458),
 Vector2(1153,458),
 Vector2(1221,458),
-
 Vector2(609,526),
 Vector2(677,526),
 Vector2(745,526),
@@ -197,7 +190,6 @@ Vector2(1017,526),
 Vector2(1085,526),
 Vector2(1153,526),
 Vector2(1221,526),
-
 Vector2(609,594),
 Vector2(677,594),
 Vector2(745,594),
@@ -208,7 +200,6 @@ Vector2(1017,594),
 Vector2(1085,594),
 Vector2(1153,594),
 Vector2(1221,594),
-
 Vector2(609,662),
 Vector2(677,662),
 Vector2(745,662),

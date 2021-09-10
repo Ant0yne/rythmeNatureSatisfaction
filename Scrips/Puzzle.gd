@@ -23,6 +23,9 @@ onready var test = $Test
 onready var puzzleFini = $PuzzleFini
 onready var frame_compteur = FrameCompteur
 onready var listes = Listes
+onready var ecranNoir = $"Ecran noir"
+
+var delay = int(0)
 
 func _ready():
 	bouclesGuitareIntro.play(0)
@@ -51,7 +54,18 @@ func _process(delta):
 	if listes.nbre_bonne_position == listes.puzzle_fini :
 		listes.destruction_piece = true
 		puzzleFini.visible = true
-		
+		frame_compteur.restart_puzzle_fini = true
+		delay += 1
+		if delay > 80:
+			if ecranNoir.modulate.a < 1 :
+				ecranNoir.modulate.a += 0.01
+			if ecranNoir.modulate.a >= 1 :
+				get_tree().quit()
+
+func _input(event):
+	if event.is_action_released("ui_cancel"):
+		get_tree().change_scene("res://Scenes/Menu.tscn")
+
 func _piece_pose():
 	if frame_compteur.ligne_son == 1:
 		sonsLigne1Et2.play()
@@ -75,18 +89,25 @@ func _piece_pose():
 		sonsLigne9Et10.play()
 		bruitPiece.play()
 	if frame_compteur.ligne_son == 10:
+		sonsLigne1Et2.play()
 		test.play()
 	if frame_compteur.ligne_son == 20:
+		sonsLigne3Et4.play()
 		test.play()
 	if frame_compteur.ligne_son == 30:
+		sonsLigne5.play()
 		test.play()
 	if frame_compteur.ligne_son == 40:
+		sonsLigne6.play()
 		test.play()
 	if frame_compteur.ligne_son == 50:
+		sonsLigne7.play()
 		test.play()
 	if frame_compteur.ligne_son == 60:
+		sonsLigne8.play()
 		test.play()
 	if frame_compteur.ligne_son == 70:
+		sonsLigne9Et10.play()
 		test.play()
 
 func _boucle_joue():
@@ -112,13 +133,13 @@ func _boucle_joue():
 		bouclesKick.set_volume_db(0)
 		frame_compteur.boucle_kick_joue = true
 
-func _input(event):
-	if event.is_action_released("ui_down"):
-		mixingDesk.fade_in("Boucles", "Boucles Guitare")
-	if event.is_action_released("ui_right"):
-		mixingDesk.toggle_fade("Boucles", "Boucles Basse")
-	if event.is_action_released("ui_left"):
-		mixingDesk.toggle_fade("Boucles", "Boucles Rimshot")
-	if event.is_action_released("ui_up"):
-		mixingDesk.toggle_fade("Boucles", "Boucles Kick")
+#func _input(event):
+#	if event.is_action_released("ui_down"):
+#		mixingDesk.fade_in("Boucles", "Boucles Guitare")
+#	if event.is_action_released("ui_right"):
+#		mixingDesk.toggle_fade("Boucles", "Boucles Basse")
+#	if event.is_action_released("ui_left"):
+#		mixingDesk.toggle_fade("Boucles", "Boucles Rimshot")
+#	if event.is_action_released("ui_up"):
+#		mixingDesk.toggle_fade("Boucles", "Boucles Kick")
 
