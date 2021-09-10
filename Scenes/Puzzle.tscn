@@ -150,15 +150,15 @@ modulate = Color( 1, 1, 1, 0.294118 )
 position = Vector2( 143.732, 627.116 )
 scale = Vector2( 0.714216, 0.714216 )
 frames = SubResource( 2 )
-frame = 29
+frame = 16
 playing = true
 flip_h = true
 script = ExtResource( 78 )
 
 [node name="Regle" type="Sprite" parent="."]
 visible = false
-position = Vector2( 603.237, 44.2373 )
-scale = Vector2( 8.15375, 7.73378 )
+position = Vector2( 274.356, 416.333 )
+scale = Vector2( 88.971, 75.2686 )
 texture = ExtResource( 67 )
 vframes = 10
 hframes = 10
@@ -168,7 +168,7 @@ frame = 13
 position = Vector2( 222.2, 66.7968 )
 scale = Vector2( 1, 0.989417 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Pieces" type="Node2D" parent="."]
@@ -183,6 +183,9 @@ texture = ExtResource( 80 )
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 640, 360 )
 texture = ExtResource( 104 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SonFond" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 75 )
