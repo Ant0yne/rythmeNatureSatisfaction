@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Puzzle - Mélodie - feedback - 2.wav-ec9b7d4421f14936d71767ae17d939a7.sample"
+
+[deps]
+
+source_file="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Mélodie - feedback - 2.wav"
+dest_files=[ "res://.import/Puzzle - Mélodie - feedback - 2.wav-ec9b7d4421f14936d71767ae17d939a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

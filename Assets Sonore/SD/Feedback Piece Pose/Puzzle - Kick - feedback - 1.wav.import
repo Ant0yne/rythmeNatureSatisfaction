@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Puzzle - Kick - feedback - 1.wav-faa157bfc339abf8008a6aa1b32d63d7.sample"
+
+[deps]
+
+source_file="res://Assets Sonore/SD/Feedback Piece Pose/Puzzle - Kick - feedback - 1.wav"
+dest_files=[ "res://.import/Puzzle - Kick - feedback - 1.wav-faa157bfc339abf8008a6aa1b32d63d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

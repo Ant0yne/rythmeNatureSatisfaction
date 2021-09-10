@@ -26,13 +26,14 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Haut" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Haut"]
 position = Vector2( -0.0582428, -38.6176 )
 shape = SubResource( 2 )
 
 [node name="Droite" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Droite"]
@@ -40,7 +41,7 @@ position = Vector2( 37.9186, 0.0883865 )
 shape = SubResource( 3 )
 
 [node name="Gauche" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gauche"]
@@ -48,7 +49,7 @@ position = Vector2( -38.6257, 0 )
 shape = SubResource( 4 )
 
 [node name="Bas" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bas"]
@@ -57,7 +58,7 @@ shape = SubResource( 5 )
 
 [node name="HBHaut" type="Area2D" parent="."]
 collision_layer = 8
-collision_mask = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBHaut"]
 position = Vector2( -0.0582428, -38.6176 )
@@ -65,7 +66,7 @@ shape = SubResource( 2 )
 
 [node name="HBDroite" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBDroite"]
 position = Vector2( 37.9186, 0.0883865 )
@@ -73,13 +74,14 @@ shape = SubResource( 3 )
 
 [node name="HBGauche" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBGauche"]
 position = Vector2( -38.6257, 0 )
 shape = SubResource( 4 )
 
 [node name="HBBas" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBBas"]
 position = Vector2( 0.0883865, 38.3605 )

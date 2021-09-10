@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 func setup():
 	connect("finished", self, "finished")
