@@ -13,7 +13,7 @@ var origine_zone_pop_y = int(200)
 var limite_zone_pop_x = int(540)
 var limite_zone_pop_y = int(700)
 
-var max_piece = 7
+var max_piece = 100
 
 func _ready():
 	_random_position()
