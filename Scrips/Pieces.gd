@@ -130,29 +130,69 @@ func _check_position_finale() :
 		listes.nbre_bonne_position +=1
 		en_bonne_position = true
 		_creation_effet_bonne_pos()
-#		print("nombre piece bien place :", listes.nbre_bonne_position)
-#		print(en_bonne_position)
+		print("nombre piece bien place :", listes.nbre_bonne_position)
+		print(en_bonne_position)
 		if self_index_position >= 0 and self_index_position <= 19:
 			frame_compteur.ligne_son = 10
+			if frame_compteur.boucle_guitare_joue == false :
+				frame_compteur.boucle_guitare += 1
 		elif self_index_position >= 20 and self_index_position <= 39:
 			frame_compteur.ligne_son = 20
+			if frame_compteur.boucle_melodie_joue == false :
+				frame_compteur.boucle_melodie += 1
 		elif self_index_position >= 40 and self_index_position <= 49:
 			frame_compteur.ligne_son = 30
+			if frame_compteur.boucle_accord_joue == false :
+				frame_compteur.boucle_accord += 1
 		elif self_index_position >= 50 and self_index_position <= 59:
 			frame_compteur.ligne_son = 40
+			if frame_compteur.boucle_basse_joue == false :
+				frame_compteur.boucle_basse += 1
 		elif self_index_position >= 60 and self_index_position <= 69:
 			frame_compteur.ligne_son = 50
+			if frame_compteur.boucle_hihat_joue == false :
+				frame_compteur.boucle_hihat += 1
 		elif self_index_position >= 70 and self_index_position <= 79:
 			frame_compteur.ligne_son = 60
-		elif self_index_position >= 80 and self_index_position <= 89:
+			if frame_compteur.boucle_rimshot_joue == false :
+				frame_compteur.boucle_rimshot += 1
+		elif self_index_position >= 80 and self_index_position <= 99:
 			frame_compteur.ligne_son = 70
-		elif self_index_position >= 90 and self_index_position <= 99:
-			frame_compteur.ligne_son = 80
+			if frame_compteur.boucle_kick_joue == false :
+				frame_compteur.boucle_kick += 1
+		print(frame_compteur.boucle_guitare)
+		print(frame_compteur.boucle_melodie)
+		print(frame_compteur.boucle_accord)
+		print(frame_compteur.boucle_basse)
+		print(frame_compteur.boucle_hihat)
+		print(frame_compteur.boucle_rimshot)
+		print(frame_compteur.boucle_kick)
 	if self_index_liste != self_index_position and en_bonne_position == true :
 		listes.nbre_bonne_position -=1
 		en_bonne_position = false
 		print("nombre piece bien place :", listes.nbre_bonne_position)
 		print(en_bonne_position)
+#		if self_index_position >= 0 and self_index_position <= 19:
+#			frame_compteur.boucle_guitare -= 1
+#		elif self_index_position >= 20 and self_index_position <= 39:
+#			frame_compteur.boucle_melodie -= 1
+#		elif self_index_position >= 40 and self_index_position <= 49:
+#			frame_compteur.boucle_accord -= 1
+#		elif self_index_position >= 50 and self_index_position <= 59:
+#			frame_compteur.boucle_basse -= 1
+#		elif self_index_position >= 60 and self_index_position <= 69:
+#			frame_compteur.boucle_hihat -= 1
+#		elif self_index_position >= 70 and self_index_position <= 79:
+#			frame_compteur.boucle_rimshot -= 1
+#		elif self_index_position >= 80 and self_index_position <= 99:
+#			frame_compteur.boucle_kick -= 1
+#		print(frame_compteur.boucle_guitare)
+#		print(frame_compteur.boucle_melodie)
+#		print(frame_compteur.boucle_accord)
+#		print(frame_compteur.boucle_basse)
+#		print(frame_compteur.boucle_hihat)
+#		print(frame_compteur.boucle_rimshot)
+#		print(frame_compteur.boucle_kick)
 
 	if self_index_liste != self_index_position and en_bonne_position == false :
 		if self_index_position >= 0 and self_index_position <= 19:
