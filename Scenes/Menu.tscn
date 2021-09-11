@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scrips/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets Graphiques/Bouton/Jouer_blanc.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets Graphiques/Bouton/Credit_blanc.png" type="Texture" id=8]
 [ext_resource path="res://Assets Graphiques/Bouton/Credit_noir.png" type="Texture" id=9]
 [ext_resource path="res://Assets Graphiques/Ecran_noir.png" type="Texture" id=10]
+[ext_resource path="res://Assets Graphiques/Fond Menu/Credit menu.png" type="Texture" id=11]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,6 +22,10 @@ texture = ExtResource( 7 )
 [node name="Titre" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
 texture = ExtResource( 3 )
+
+[node name="CreditMenu" type="Sprite" parent="."]
+position = Vector2( 639.929, 360 )
+texture = ExtResource( 11 )
 
 [node name="Jouer" type="TextureButton" parent="."]
 margin_left = 197.721
