@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Rythme Nature Satisfaction"
 run/main_scene="res://Scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://icone_base.png"
+config/windows_native_icon="res://icone_puzzle-champetre.ico"
 
 [autoload]
 
